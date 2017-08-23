@@ -1,0 +1,121 @@
+<div class="container filters">
+    <div class="row" style="margin-top:20px; margin-left: 5%;margin-right: 5%; text-align: center">    
+        
+             
+                   
+                   <div class="col-lg-6 col-md-6"> 
+                    <span> Filter By: 
+                   <select ng-model="queryBy"></p>
+                   <option  value="" selected disabled hidden>Select filter</option>
+                    <option value="team">Team</option>
+                    <option value="year">Year</option>
+                    <option value="date">Date</option>
+                   
+
+                </select>   </span>
+                </div>
+              
+            
+                <div class="col-lg-6 col-md-6 ">
+                <div ng-if="queryBy=='team'">
+           
+                <select ng-model="$parent.query" >
+                    <option value="" selected disabled hidden>Select team</option>
+
+                    <option ng-repeat="team in listMatches.teams|orderBy:team" value="{{team}}">{{team}}</option>
+                </select> 
+                </div>
+
+                <div ng-if="queryBy=='year'">
+
+                    <select ng-model="$parent.query">
+                    <option value="" selected disabled hidden>Select year</option>
+                    <option ng-repeat="year in listMatches.years" value="{{year}}">{{year}}</option>
+                </select> 
+                </div>
+
+                <div ng-if="queryBy=='date'">
+               
+                  <input style="margin-top: 10px" type="text" class="form-control" name="x" placeholder="Enter date(yyyy-mm-dd)" ng-model="$parent.query"> 
+                </div>
+                </div>
+
+<!--
+<div class="input-group-btn search-panel">
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+<span id="search_concept">Filter by</span> <span class="caret"></span>
+</button>
+</div>
+<select ng-model="query1">
+
+                      <option ng-repeat="team in listMatches.teams|orderBy:team" value="{{team}}">{{team}}</option>
+                    </select> 
+                      <select ng-model="query1">
+
+                      <option ng-repeat="year in listMatches.years" value="{{year}}">{{year}}</option>
+                    </select> -->
+                      
+                      
+              <!--  <select ng-model="query1">
+
+                <option ng-repeat="team in listMatches.teams|orderBy:team" value="{{team}}">{{team}}</option>
+                </select> -->
+                 
+           
+            </div>
+    
+    </div>
+</div>
+<div class="table-users well well-lg pre-scrollable">
+<div class="header">{{listMatches.name1}}</div>
+   
+<table cellspacing="0" class="table-hover">
+    <tr>
+        <th>Match name</th>
+        <th>date</th>
+        <th>team 1</th>
+        <th>team 2</th>
+        <th>Scores</th>
+    </tr>
+<tbody ng-repeat="round in listMatches.rounds1">       
+    <tr  ng-repeat="match in round.matches | filter:query" ng-click="listMatches.getData($parent.$index,$index,'S01')" >
+     <a ng-href="#/{{match.matchId}}" > 
+        <td>{{round.name}}</td> 
+        <td>{{match.date}}</td>
+        <td>{{match.team1.name}}</td> 
+        <td>{{match.team2.name}} </td>
+        <td>{{match.score1}}-{{match.score2}}</td>
+        </a>
+    </tr> 
+
+</tbody>
+</table>
+<br><br> 
+<br><br>         
+
+<div class="header" >{{listMatches.name2}}</div>
+<table cellspacing="0" class="table-hover">
+    <tr>
+        <th>Match name</th>
+        <th>date</th>
+        <th>team 1</th>
+        <th>team 2</th>
+        <th>Scores</th>
+    </tr>
+<tbody ng-repeat="round in listMatches.rounds2" >
+
+ <a href="#/match/{{match.matchId}}">
+    <tr ng-repeat="match in round.matches | filter:query" ng-click="listMatches.getData($parent.$index,$index,'S02')">   
+        <td>{{round.name}}</td>
+        <td>{{match.date}}</td>
+        <td>{{match.team1.name}}</td> 
+        <td>{{match.team2.name}}</td>
+        <td>{{match.score1}}-{{match.score2}}</td>
+    </tr> 
+    </a>
+</tbody>                
+</table>
+<br><br> 
+<br><br>         
+</div>
+</div>

@@ -1,0 +1,66 @@
+<div ng-init="getStats.loadStatistics()">
+
+	
+
+	<div class="header" style="margin-top:50px ">{{getStats.name1}} Statistics</div>
+
+	
+<table class="table-striped table-inverse statsTable" >
+  <thead>
+    <tr>
+      <th>Team name</th>
+      <th>Matches played</th>
+      <th>Matches Won</th>
+      <th>Matches Lost</th>
+      <th>Matches draw</th>
+      <th>Total Scores</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr ng-repeat="singleTeamStats in getStats.teamStats1 | orderBy:'teamName'">
+<td>{{singleTeamStats.teamName}}</td>
+<td>{{singleTeamStats.matchesPlayed}}</td>
+<td>{{singleTeamStats.matchesWon}}</td> 
+<td>{{singleTeamStats.matchesLost}}</td>
+<td>{{singleTeamStats.matchesDrawn}}</td>
+<td>{{singleTeamStats.scoresMade}}</td>
+</tr>
+  
+</tbody>
+</table>
+<br><br> 
+<br><br>
+
+	<div class="header">{{getStats.name2}} Statistics</div>
+
+
+	<table class="table-striped table-inverse statsTable" >
+  <thead>
+    <tr>
+      <th>Team name</th>
+      <th>Matches played</th>
+      <th>Matches Won</th>
+      <th>Matches Lost</th>
+      <th>Matches draw</th>
+      <th>Total Scores</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr ng-repeat="singleTeamStats in getStats.teamStats2 | orderBy:'teamName'">
+<td>{{singleTeamStats.teamName}}</td>
+<td>{{singleTeamStats.matchesPlayed}}</td>
+<td>{{singleTeamStats.matchesWon}}</td> 
+<td>{{singleTeamStats.matchesLost}}</td>
+<td>{{singleTeamStats.matchesDrawn}}</td>
+<td>{{singleTeamStats.scoresMade}}</td>
+</tr>
+</tbody>
+</table>
+<br><br> 
+<br><br> 
+  				<ul class="pager">
+                    <li class="next">
+                        <a href="#/">&larr; Back to Home</a>
+                    </li>
+                </ul>
+</div>

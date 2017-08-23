@@ -1,0 +1,49 @@
+<div class="row" ng-init="currentMatch.loadCurrentMatch()">
+            <div class="container">
+            <div class="row singleMatch">
+            <div class="col-lg-12 col-md-12" style="background-color:#FF8600;">
+                 <h1>{{currentMatch.league}}</h1>
+            </div> 
+            <div class="col-lg-12 col-md-12" style="background-color:#FFC469" >    
+                <h1>Day: {{currentMatch.matchDay}}</h1>
+            </div>
+                  
+            <div class="col-lg-12 col-md-12" style="background-color: #FF9912" >         
+            <p> Date:{{currentMatch.match.date}}</p>
+            </div>
+            <div class="col-lg-6 col-md-6 " style="background-color: #cc8400">
+
+                     <p> Team 1 : </p>
+                     <p> name: {{currentMatch.match.team1.name}}</p>
+                      <p>key: {{currentMatch.match.team1.key}}</p>
+                      <p>code: {{currentMatch.match.team1.code}}</p>
+             </div> 
+             <div class="col-lg-6 col-md-6" style="background-color: #996300; ">        
+                    <p>  Team 2 : </p>
+                     <p> name: {{currentMatch.match.team2.name}}</p>
+                      <p>key: {{currentMatch.match.team2.key}}</p>
+                      <p>code: {{currentMatch.match.team2.code}}</p>
+               </div>
+               <div class="col-lg-12 col-md-12" style="background-color: #FFA824">       
+                      <p>Score:
+                      <p>Team 1 : {{currentMatch.match.score1}}</p>
+                      <p>Team 2: {{currentMatch.match.score2}}</p>   
+
+                    </p>
+
+                </div>
+
+                </div>
+                </div>
+                <hr>
+                
+              
+             
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="next">
+                        <a href="#/">&larr; Back to Home </a>
+                    </li>
+                </ul>
+            
+</div>

@@ -1,0 +1,180 @@
+body {
+  background-color: #3A3A38;
+
+}
+body * {
+  box-sizing: border-box;
+}
+.pre-scrollable {
+    max-height: 600px;
+    overflow-y: scroll;
+}
+
+.header {
+  background-color: #383D46;
+  color: white;
+  font-size: 1.5em;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.table-users {
+  border: 1px solid #327a81;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+  max-width: calc(100% - 1em);
+  margin: 1em auto;
+  width: 90%;
+  height: 100%;
+}
+table
+{
+  width:100%;
+  height: 100%;
+}
+.table-hover tbody tr:hover td {
+    color: black;
+}
+
+
+table td, table th {
+  color: white;
+  padding: 20px;
+}
+table td {
+  text-align: center;
+  vertical-align: middle;
+}
+table td:last-child {
+  font-size: 0.95em;
+  line-height: 1.4;
+  text-align: left;
+}
+table th {
+  background-color: #736868;
+  font-weight: 300;
+   text-align: center;
+}
+table tr:nth-child(2n) {
+  background-color:#363131;
+}
+table tr:nth-child(2n+1) {
+  background-color: #FF6600;
+}
+@media screen and (max-width: 700px) {
+  table, tr, td {
+    display: block;
+
+  }
+  td:first-child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100px;
+  }
+  td:not(:first-child) {
+    clear: both;
+    margin-left: 100px;
+    padding: 4px 20px 4px 90px;
+    position: relative;
+    text-align: left;
+  }
+  td:not(:first-child):before {
+    color: #91ced4;
+    content: '';
+    display: block;
+    left: 0;
+    position: absolute;
+  }
+  td:nth-child(2):before {
+    content: 'Date:';
+  }
+  td:nth-child(3):before {
+    content: 'Team 1:';
+  }
+  td:nth-child(4):before {
+    content: 'Team 2:';
+  }
+  td:nth-child(5):before {
+    content: 'Scores:';
+  }
+  
+
+  tr {
+    padding: 10px 10px;
+    position: relative;
+  }
+  tr:first-child {
+    display: none;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+   
+    color: white;
+    font-size: 2em;
+    font-weight: 700;
+    padding: 0;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  td:first-child {
+   
+    border-bottom: 1px solid #91ced4;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: 0;
+    transform: translateY(0);
+    width: 100%;
+  }
+  td:not(:first-child) {
+    margin: 0;
+    padding: 5px 1em;
+    width: 100%;
+  }
+  td:not(:first-child):before {
+    font-size: 0.8em;
+    padding-top: 0.3em;
+    position: relative;
+  }
+  td:last-child {
+    padding-bottom: 1rem !important;
+  }
+  tr {
+   
+    border: 1px solid #6cbec6;
+    border-radius: 10px;
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+    margin: 0.5rem 0;
+    padding: 0;
+  }
+  .table-users {
+    border: none;
+    box-shadow: none;
+    overflow-y: scroll;
+  }
+}
+.statsTable tbody tr td
+{
+  color: #FF8C00
+}
+@media screen and (max-width: 700px) {
+
+ .statsTable tbody tr td:nth-child(2):before {
+    content: 'Matches Played:';
+  }
+ .statsTable tbody tr td:nth-child(3):before {
+    content: 'Matches won:';
+  }
+ .statsTable tbody tr td:nth-child(4):before {
+    content: 'Matches lost:';
+  }
+  .statsTable tbody tr td:nth-child(5):before {
+    content: 'Matches draw:';
+  }
+  .statsTable tbody tr td:nth-child(6):before {
+    content: 'Total scores:';
+  }
+  
+}
